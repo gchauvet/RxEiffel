@@ -8,7 +8,7 @@
 		license: "Eiffel Forum License 2"
 	</description>
 
-	<cluster name="rx_eiffel" location="/home/gchauvet/Documents/RxEiffel/library"/>
+	<cluster name="rx_eiffel" location="../library"/>
 	<mount location="${GOBO}/library/kernel.xace"/>
 	<mount location="${GOBO}/library/kernel/library.xace"/>
 	<mount location="${GOBO}/library/string/library.xace"/>
