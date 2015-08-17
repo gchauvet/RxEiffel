@@ -14,6 +14,7 @@ inherit
 
 	ANY
 			-- Needed for SE 2.1b1.
+        HASHABLE
 			
 feature -- Access
 
@@ -22,7 +23,6 @@ feature -- Access
 			-- This method takes as a parameter the item emitted by the Observable.
 		require
 			not_void: item /= Void
-		do
 		deferred
 		end
 		

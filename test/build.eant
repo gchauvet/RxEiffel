@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="RxEiffel" default="help" >
+<project name="RxEiffel" default="test" >
 
 	<description>
 		system: "Reactive-X Eiffel wrapper Tester"
@@ -18,8 +18,7 @@
 <!-- Implementation -->
 
 	<target name="init_system">
-		<set name="system" value="RxEiffel"/>
-		<set name="library" value="RxEiffel"/>
+		<set name="system" value="rx_eiffel"/>
 		<set name="system_dir" value="."/>
 	</target>
 

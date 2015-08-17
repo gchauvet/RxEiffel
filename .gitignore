@@ -1,1 +1,6 @@
 **/TESTGEN
+compile_ge.xace
+!*.e
+!*.xace
+!*.eant
+!*.cfg

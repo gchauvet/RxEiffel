@@ -2,14 +2,14 @@ note
 
 	description:
 
-		"Test argument parser"
+		"Test Observable part"
 
 	test_status: "ok_to_run"
 	library: "Reactive X"
 	copyright: "Copyright (c) 2015, Guillaume CHAUVET"
 	license: "Eiffel Forum License 2"
 
-class AP_TEST_OBSERVABLE
+class RX_TEST_OBSERVABLE
 
 inherit
 
@@ -22,14 +22,11 @@ create
 feature -- Tests
 
 	test_make
-			-- Can we make a parser?
 		local
-			p: AP_PARSER
+			instance: RX_OBSERVABLE
 		do
-			create p.make
-			assert_integers_equal ("has_one_alternative_set", 1, p.alternative_options_lists.count)
-			assert_integers_equal ("has_no_options_in_basic", 0, p.options.count)
-			assert_integers_equal ("has_one_option", 1, p.all_options.count)
+			instance := create {RX_OBSERVABLE}.make
+			assert ("instance_not_void", instance /= Void)
 		end
 
 end

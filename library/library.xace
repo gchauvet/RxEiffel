@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<library name="RxEiffel" prefix="rx_">
+	<description>
+		description: "Xace file for the Reactive-X Library"
+		library: "Reactive-X Library"
+		copyright: "Copyright (c) 2015, Guillaume CHAUVET"
+		license: "Eiffel Forum License 2"
+	</description>
+
+	<cluster name="rx_eiffel" location="/home/gchauvet/Documents/RxEiffel/library"/>
+	<mount location="${GOBO}/library/kernel.xace"/>
+	<mount location="${GOBO}/library/kernel/library.xace"/>
+	<mount location="${GOBO}/library/string/library.xace"/>
+	<mount location="${GOBO}/library/structure/library.xace"/>
+</library>
