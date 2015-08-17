@@ -8,7 +8,7 @@ note
 	copyright: "Copyright (c) 2015, Guillaume CHAUVET"
 	license: "Eiffel Forum License 2"
 
-deferred class RX_OBSERVER
+deferred class RX_OBSERVER[G]
 
 inherit
 
@@ -18,7 +18,7 @@ inherit
 			
 feature -- Access
 
-	on_next (item: RX_OBSERVER) is
+	on_next (item: G)
 			-- An Observable calls this method whenever the Observable emits an item.
 			-- This method takes as a parameter the item emitted by the Observable.
 		require
@@ -26,7 +26,7 @@ feature -- Access
 		deferred
 		end
 		
-	on_error (exception: EXCEPTION) is
+	on_error (exception: EXCEPTION)
 			-- An Observable calls this method to indicate that it has failed to generate
 			-- the expected data or has encountered some other error. This stops the Observable and
 			-- it will not make further calls to onNext or onCompleted.
@@ -36,10 +36,14 @@ feature -- Access
 		deferred
 		end
 
-	on_completed is
+	on_completed
 			-- An Observable calls this method after it has called onNext for the final time,
 			-- if it has not encountered any errors.
 		deferred
 		end
 
+	hash_code : INTEGER
+		do
+			Current.generating_type.hash_code
+		end
 end

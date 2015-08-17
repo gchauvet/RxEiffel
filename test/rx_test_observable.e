@@ -23,10 +23,21 @@ feature -- Tests
 
 	test_make
 		local
-			instance: RX_OBSERVABLE
+			instance: RX_OBSERVABLE[INTEGER]
 		do
-			instance := create {RX_OBSERVABLE}.make
+			instance := create {RX_OBSERVABLE[INTEGER]}.make
 			assert ("instance_not_void", instance /= Void)
+		end
+		
+		
+	test_add_subscriber
+		local
+			observable: RX_OBSERVABLE[INTEGER]
+			observer: RX_OBSERVER[INTEGER]
+		do
+			observable := create {RX_OBSERVABLE[INTEGER]}.make
+			observer := create {MK_OBSERVER}.make
+			observable.subscribe(observer)
 		end
 
 end

@@ -8,7 +8,7 @@ note
 	copyright: "Copyright (c) 2015, Guillaume CHAUVET"
 	license: "Eiffel Forum License 2"
 
-class RX_OBSERVABLE
+class RX_OBSERVABLE[G]
 
 inherit
 
@@ -23,12 +23,12 @@ feature {NONE}
 
         make
 		do
-			subscribers := create {DS_HASH_SET[RX_OBSERVER]}.make_default
+			subscribers := create {DS_HASH_SET[RX_OBSERVER[G]]}.make_default
 		end
         
 feature -- Access
 
-	subscribe (subscriber: RX_OBSERVER)
+	subscribe (subscriber: RX_OBSERVER[G])
 			-- Register an observer
 		require
 			not_void: subscriber /= Void
@@ -37,7 +37,7 @@ feature -- Access
 			subscribers.put(subscriber)
 		end
 		
-	unsubscribe (subscriber: RX_OBSERVER)
+	unsubscribe (subscriber: RX_OBSERVER[G])
 			-- Unregister an observer
 		require
 			not_void: subscriber /= Void
@@ -48,6 +48,6 @@ feature -- Access
 
 feature {NONE}
 
-	subscribers : DS_SET[RX_OBSERVER]
+	subscribers : DS_SET[RX_OBSERVER[G]]
 
 end
