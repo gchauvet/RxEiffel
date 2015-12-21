@@ -33,7 +33,6 @@ feature -- Access
 		require
 			not_void: subscriber /= Void
 		do
-		ensure
 			subscribers.put(subscriber)
 		end
 		
